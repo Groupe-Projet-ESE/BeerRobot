@@ -1,28 +1,5 @@
 {
   "board": {
-    "design_settings": {
-      "defaults": {
-        "board_outline_line_width": 0.1,
-        "copper_line_width": 0.2,
-        "copper_text_size_h": 1.5,
-        "copper_text_size_v": 1.5,
-        "copper_text_thickness": 0.3,
-        "other_line_width": 0.15,
-        "silk_line_width": 0.15,
-        "silk_text_size_h": 1.0,
-        "silk_text_size_v": 1.0,
-        "silk_text_thickness": 0.15
-      },
-      "diff_pair_dimensions": [],
-      "drc_exclusions": [],
-      "rules": {
-        "min_copper_edge_clearance": 0.0,
-        "solder_mask_clearance": 0.0,
-        "solder_mask_min_width": 0.0
-      },
-      "track_widths": [],
-      "via_dimensions": []
-    },
     "layer_presets": []
   },
   "boards": [],
@@ -226,7 +203,7 @@
       "pin_not_connected": "error",
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
-      "power_pin_not_driven": "ignore",
+      "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "unannotated": "error",
       "unit_value_mismatch": "error",
@@ -239,7 +216,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Projet_robot_ESE.kicad_pro",
+    "filename": "Actionneurs.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -300,15 +277,6 @@
       "version": 1
     },
     "net_format_name": "",
-    "ngspice": {
-      "fix_include_paths": true,
-      "fix_passive_vals": false,
-      "meta": {
-        "version": 0
-      },
-      "model_mode": 0,
-      "workbook_filename": ""
-    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "spice_adjust_passive_values": false,
@@ -318,24 +286,8 @@
   },
   "sheets": [
     [
-      "0bb0216c-212e-49c4-bd5a-04e60c7e2d64",
+      "612df67b-50d1-4314-aaa8-492795b394eb",
       ""
-    ],
-    [
-      "a99643bb-49f6-4462-a70c-54bf4b271d8b",
-      "STM32"
-    ],
-    [
-      "198bc615-46ce-45c0-92d6-40babd4f8d03",
-      "Capteurs"
-    ],
-    [
-      "24f7c972-c814-4bcd-89b7-06043db0f88d",
-      "Alimentation"
-    ],
-    [
-      "65ef4496-5dfa-44df-8ccc-4bab8bab535b",
-      "Actionneurs"
     ]
   ],
   "text_variables": {}

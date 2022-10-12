@@ -1,6 +1,7 @@
 (sym_lib_table
-  (lib (name "STM32G431KBT6")(type "KiCad")(uri "C:/Users/alixh/OneDrive/Documents/ENSEA/COURS/ESE/Systèmes_a_microcontroleurs/tuto_usb-c/STM32G431KBT6.kicad_sym")(options "")(descr ""))
+  (lib (name "STM32G431KBT6")(type "KiCad")(uri "C:/Users/alixh/OneDrive/Documents/ENSEA/COURS/ESE/Systèmes_a_microcontroleurs/tuto_usb-c/STM32G431KBT6.kicad_sym")(options " pwr_sym_only")(descr ""))
   (lib (name "stm32g431kbt6")(type "KiCad")(uri "${KIPRJMOD}/stm32g431kbt6.kicad_sym")(options "")(descr ""))
   (lib (name "STM32G0RBT6")(type "KiCad")(uri "${KIPRJMOD}/STM32G0RBT6.kicad_sym")(options "")(descr ""))
   (lib (name "XL320")(type "KiCad")(uri "${KIPRJMOD}/XL320.kicad_sym")(options "")(descr ""))
+  (lib (name "STM32G070RBT6")(type "KiCad")(uri "C:/Users/Loïcia/Downloads/STM32G070RBT6.kicad_sym")(options "")(descr ""))
 )
