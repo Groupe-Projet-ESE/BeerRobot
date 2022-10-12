@@ -8,10 +8,10 @@ Github du projet ESE de Dernière année à l'ENSEA
 
 Rôle des membres du groupe :
 
-Chelsea COMLAN : responsable Hardware
-Loïcia KOEHL : responsable intégration
-Quentin SIMON : responsable Software
-Alix HAVRET : responsable livrables
+- Chelsea COMLAN : responsable Hardware
+- Loïcia KOEHL : responsable intégration
+- Quentin SIMON : responsable Software
+- Alix HAVRET : responsable livrables
 
 Objectif du projet : création d'un robot permettant d'attraper des canettes et les déplacer dans des zones, délimitées au préalables, selon la couleur de la canette.
 Le robot devra être capable de :
