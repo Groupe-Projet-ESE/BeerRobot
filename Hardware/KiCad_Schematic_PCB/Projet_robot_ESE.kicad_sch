@@ -941,13 +941,13 @@
       (reference "R501") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/56e31796-213f-4c2e-aeac-6b27a0669b5e"
-      (reference "SW501") (unit 1) (value "SW_SPDT") (footprint "")
+      (reference "SW501") (unit 1) (value "SW_SPDT") (footprint "switch_robot:switch_pcb_robot")
     )
     (path "/a99643bb-49f6-4462-a70c-54bf4b271d8b/7ff4d870-e709-473c-8c30-286bff92b734"
       (reference "U201") (unit 1) (value "STM32G070RBT6") (footprint "Package_QFP:LQFP-64_10x10mm_P0.5mm")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/1abb3bcb-2e2a-47e0-8e41-bb17f35121e4"
-      (reference "U501") (unit 1) (value "AZ1117-5.0") (footprint "Package_TO_SOT_SMD:SOT-223-5")
+      (reference "U501") (unit 1) (value "AZ1117-5.0") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/f65f5cb0-be5b-41c9-ab5e-69b40000b5e3"
       (reference "U502") (unit 1) (value "MCP1802x-xx02xOT") (footprint "Package_TO_SOT_SMD:SOT-23-5")
