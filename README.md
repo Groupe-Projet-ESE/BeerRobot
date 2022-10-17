@@ -1,12 +1,16 @@
 # BeerRobot
-Chelsea COMLAN - Alix HAVRET - Loïcia KOEHL - Quentin SIMON
+## Membres du groupe
+  Chelsea COMLAN  
+  Alix HAVRET  
+  Loïcia KOEHL  
+  Quentin SIMON  
 
 ENSEA
-Last update : 12/10/2022
+Last update of README : 17/10/2022
 
 Github du projet ESE de Dernière année à l'ENSEA
 
-Rôle des membres du groupe :
+### Rôle des membres du groupe :
 
 - Chelsea COMLAN : responsable Hardware
 - Loïcia KOEHL : responsable intégration
