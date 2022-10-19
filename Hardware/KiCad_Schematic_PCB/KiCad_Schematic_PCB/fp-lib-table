@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "switch_robot")(type "KiCad")(uri "${KIPRJMOD}/switch_robot.pretty")(options "")(descr ""))
-)
