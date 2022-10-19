@@ -607,6 +607,9 @@
     (path "/dba82e45-e286-41c9-a0b9-3946c1a275e2"
       (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
     )
+    (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/be746241-9b15-484b-9ca9-09c43075d4ad"
+      (reference "#PWR0102") (unit 1) (value "+3.3V") (footprint "")
+    )
     (path "/a99643bb-49f6-4462-a70c-54bf4b271d8b/818a8e76-8fdd-4def-8be5-392ca4debf08"
       (reference "#PWR0201") (unit 1) (value "GND") (footprint "")
     )
@@ -705,9 +708,6 @@
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/592a410d-c273-451b-b6bb-876bd3cbe621"
       (reference "#PWR0409") (unit 1) (value "GND") (footprint "")
-    )
-    (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/a00cd581-e0b2-4388-b1a1-ebe57bcb1ca1"
-      (reference "#PWR0410") (unit 1) (value "+3.3V") (footprint "")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/1b5ae000-b060-46fc-aa1b-92145a457d89"
       (reference "#PWR0411") (unit 1) (value "+BATT") (footprint "")
@@ -860,7 +860,7 @@
       (reference "J208") (unit 1) (value "Conn_02x07_Odd_Even") (footprint "Connector_PinHeader_1.27mm:PinHeader_2x07_P1.27mm_Vertical_SMD")
     )
     (path "/a99643bb-49f6-4462-a70c-54bf4b271d8b/d48d3641-4220-441e-886a-e4dd7e180b17"
-      (reference "J209") (unit 1) (value "JST_SUPP") (footprint "Connector_JST:JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical")
+      (reference "J209") (unit 1) (value "JST_SUPP") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/37cf0c73-047c-4a9e-a290-3a2535c79c1a"
       (reference "J501") (unit 1) (value "JST_switch") (footprint "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical")
@@ -946,7 +946,7 @@
     (path "/a99643bb-49f6-4462-a70c-54bf4b271d8b/7ff4d870-e709-473c-8c30-286bff92b734"
       (reference "U201") (unit 1) (value "STM32G070RBT6") (footprint "Package_QFP:LQFP-64_10x10mm_P0.5mm")
     )
-    (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/1abb3bcb-2e2a-47e0-8e41-bb17f35121e4"
+    (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/26319b2e-5f5c-40dd-a6c8-eb62bf9244f7"
       (reference "U501") (unit 1) (value "AZ1117-5.0") (footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/f65f5cb0-be5b-41c9-ab5e-69b40000b5e3"
