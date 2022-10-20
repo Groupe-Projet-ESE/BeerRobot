@@ -27,8 +27,8 @@ Le robot devra être capable de :
 
 
 ### Contenus des dossiers
-### Additional documents
+  #### Additional documents
 * Schema_architectural_robot
-### Hardware
+  #### Hardware
 * Projet_robot_ESE : dossier kicad avec schematic, PCB et routage
-### Software 
+  #### Software 
