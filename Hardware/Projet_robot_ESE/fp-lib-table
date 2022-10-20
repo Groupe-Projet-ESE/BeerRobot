@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "switch_robot")(type "KiCad")(uri "${KIPRJMOD}/switch_robot.pretty")(options "")(descr ""))
+  (lib (name "Logo_ENSEA")(type "KiCad")(uri "${KIPRJMOD}/Images_PCB.pretty")(options "")(descr ""))
+)
