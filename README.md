@@ -32,3 +32,8 @@ Le robot devra être capable de :
   #### Hardware
 * Projet_robot_ESE : dossier kicad avec schematic, PCB et routage
   #### Software 
+  
+  
+Etapes pour la/les prochaines séances :  
+- prise en main des capteurs (couleurs, bordures, distance) et début de codage  
+- début de configuration du servomoteur et des 2 moteurs  
