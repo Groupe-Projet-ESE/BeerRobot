@@ -610,6 +610,9 @@
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/be746241-9b15-484b-9ca9-09c43075d4ad"
       (reference "#PWR0102") (unit 1) (value "+3.3V") (footprint "")
     )
+    (path "/65ef4496-5dfa-44df-8ccc-4bab8bab535b/beede1dd-904b-407d-b642-dd05aee96a04"
+      (reference "#PWR0103") (unit 1) (value "+3.3V") (footprint "")
+    )
     (path "/a99643bb-49f6-4462-a70c-54bf4b271d8b/818a8e76-8fdd-4def-8be5-392ca4debf08"
       (reference "#PWR0201") (unit 1) (value "GND") (footprint "")
     )
@@ -939,6 +942,9 @@
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/dd3db02c-2f0c-4b82-943b-d35626977c94"
       (reference "R501") (unit 1) (value "1k") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
+    )
+    (path "/65ef4496-5dfa-44df-8ccc-4bab8bab535b/399d2e77-1879-4197-90fe-0d2df969be25"
+      (reference "R502") (unit 1) (value "10k") (footprint "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder")
     )
     (path "/24f7c972-c814-4bcd-89b7-06043db0f88d/56e31796-213f-4c2e-aeac-6b27a0669b5e"
       (reference "SW501") (unit 1) (value "SW_SPDT") (footprint "switch_robot:switch_pcb_robot")
