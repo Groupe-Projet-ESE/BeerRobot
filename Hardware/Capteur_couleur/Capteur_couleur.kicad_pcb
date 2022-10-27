@@ -908,6 +908,12 @@
   (gr_line (start 131 62.5) (end 131 50) (layer "Edge.Cuts") (width 0.1) (tstamp 90a7d889-9631-4caa-b9c9-c800175cd4c3))
   (gr_arc (start 131 62.5) (mid 129.681981 65.681981) (end 126.5 67) (layer "Edge.Cuts") (width 0.1) (tstamp a309bb11-ff48-442b-943b-be30ab48e2ce))
   (gr_line (start 103 67) (end 126.5 67) (layer "Edge.Cuts") (width 0.1) (tstamp f8b2f34d-a74c-4641-86e9-c24b3c3596dc))
+  (gr_text "Alix HAVRET\nLoïcia KOEHL\nQuentin SIMON\nChelsea COMLAN" (at 126.6 58.8) (layer "F.SilkS") (tstamp 32b97e22-2756-460a-a728-12ef4d177f5a)
+    (effects (font (size 0.4 0.4) (thickness 0.1)))
+  )
+  (gr_text "Capteur couleur \nVEML3328" (at 126.5 55) (layer "F.SilkS") (tstamp d97b4e6c-2678-4233-8a86-6cdc55142257)
+    (effects (font (size 0.5 0.5) (thickness 0.1)))
+  )
 
   (segment (start 107.6 54) (end 105 54) (width 0.75) (layer "F.Cu") (net 1) (tstamp 0d5aebae-c84c-4654-9bab-3f4ba66001fd))
   (segment (start 101 58.5) (end 101 60) (width 0.75) (layer "F.Cu") (net 1) (tstamp 167aa52d-c940-473f-a677-560627384271))
