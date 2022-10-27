@@ -7,7 +7,7 @@
 
 Encadrant du projet : Mr Fiack  
 
-__Last update of README__ : 26/10/2022
+__Last update of README__ : 27/10/2022
 
 __Github du projet ESE de Dernière année à l'ENSEA__
 
@@ -31,6 +31,7 @@ Le robot devra être capable de :
 * Schema_architectural_robot
   #### Hardware
 * Projet_robot_ESE : dossier kicad avec schematic, PCB et routage
+* PCB 
   #### Software 
 * Projet CubeIDE pour la STM32G0
 
