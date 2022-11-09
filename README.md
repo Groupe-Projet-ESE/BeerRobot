@@ -5,9 +5,9 @@
 - Quentin SIMON : responsable Software
 - Alix HAVRET : responsable livrables
 
-Encadrant du projet : Mr Fiack  
+Encadrant du projet : Mr Fiack , Mr Tauvel
 
-__Last update of README__ : 27/10/2022
+__Last update of README__ : 09/11/2022
 
 __Github du projet ESE de Dernière année à l'ENSEA__
 
@@ -44,3 +44,15 @@ Etapes en cours de réalisations :
 - prise en main des capteurs (couleurs, bordures, distance) et début de codage  sur CubeIDE
 - début de configuration du servomoteur et des 2 moteurs  
 - fin du PCB pour capteur couleur 
+
+
+__09/11/2022__ Reception du PCB, début des soudures 
+Soudeurs : Loïcia et Chelsea
+
+Début de réalisation du diagramme à état
+
+Software :  
+
+1 état = 1 tâche 
+
+
