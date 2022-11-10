@@ -7,7 +7,7 @@
 
 Encadrant du projet : Mr Fiack , Mr Tauvel
 
-__Last update of README__ : 09/11/2022
+__Last update of README__ : 10/11/2022
 
 __Github du projet ESE de Dernière année à l'ENSEA__
 
@@ -29,6 +29,8 @@ Le robot devra être capable de :
 ### Contenus des dossiers
   #### Additional documents
 * Schema_architectural_robot
+* Première version du diagramme d'état
+
   #### Hardware
 * Projet_robot_ESE : dossier kicad avec schematic, PCB et routage
 * PCB 
