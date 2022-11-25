@@ -7,7 +7,7 @@
 
 Encadrant du projet : Mr Fiack , Mr Tauvel
 
-__Last update of README__ : 10/11/2022
+__Last update of README__ : 25/11/2022
 
 __Github du projet ESE de Dernière année à l'ENSEA__
 
@@ -43,13 +43,21 @@ Espaces aménagés dans le design pour les différents capteurs : couleurs, bord
   
   
 __Etapes en cours de réalisations :__
-- prise en main des capteurs (couleurs, bordures, distance) et début de codage  sur CubeIDE
-- soudure sur PCB
+- prise en main des capteurs ainsi que des composants (couleurs, bordures, distance) et début de codage sur CubeIDE
+Capteurs opérationnels seuls (fonctionnement solo, sur carte STM32F746NG Discovery)
+    - Capteur TOF 
+    - Capteur de bordure 
+Autres élèments 
+    - Servomoteur opérationnel, ouverture et fermeture avec notre pince imprimée en 3D
+    - moteurs opérationnels, vitesse inégale entre les 2, un asservissement en vitesse sera necessaire pour faire tourner les 2 moteurs à la même vitesse
+    
+
 - diagramme à état
 - réalisation en 3D du robot pour premier test
 
 __09/11/2022__ Reception du PCB, début des soudures 
 Soudeurs : Loïcia et Chelsea
+25/11/2022 : ensemble des composants soudés sur la carte, sauf certains connecteurs, test en cours de réalisation
 
 
 
