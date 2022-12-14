@@ -60,14 +60,18 @@ Soudeurs : Loïcia et Chelsea
 25/11/2022 : ensemble des composants soudés sur la carte, sauf certains connecteurs, test en cours de réalisation
 
 Moteurs : 
-Moteurs opérationnels sur la carte, avec les drivers. Problème de vitesse. Les 2 moteurs ne tournent pas à la même vitesse, il faudrait faire l'asservissement de ces derniers. Par ailleurs, on fera fonctionner l'odométrie pour avoir la position du robot en direct.
+Moteurs opérationnels sur la carte, avec les drivers. Problème de vitesse. Les 2 moteurs ne tournent pas à la même vitesse, il faudrait faire l'asservissement de ces derniers.Actuellement le robot dévie à son démarrage. Par ailleurs, on fera fonctionner l'odométrie pour avoir la position du robot en direct.
 
 
-Software :  
-Le code sera utilisé dans diverses tâches (utilisation de FreeRTOS). Chaque étét décrit dans le diagramme à états correspondra à une tâche.  
+__Software : __
+Le code sera utilisé dans diverses tâches (utilisation de FreeRTOS). Chaque état décrit dans le diagramme à états correspondra à une tâche.  
 Une tâche pourra faire appel à de la donnée, ou en consommer. Dans chaque tâche nous feront appel à divers bouts de code permettant de démarrer un capteur, un moteur, un servo, etc ...
 
 Le shell utilisé aura pour base le shell de Mr Fiack. Et sera amélioré afin de correspondre à nos attentes.
+
+Les capteurs opérationnels sont :
+- le capteur bordure 
+- le capteur TOF 
 
 
 
