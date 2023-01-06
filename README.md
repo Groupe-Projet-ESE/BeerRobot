@@ -74,5 +74,11 @@ Les capteurs opérationnels sont :
 - le capteur TOF 
 
 
-
+Objectif de la présentation finale : 
+Présenter son robot avec un code intégré et prévoir une echainement d'action :  
+- repérer la canette
+- avancer vers elle 
+- l'attraper
+- vérifier qu'elle est attrapée
+- 
 
