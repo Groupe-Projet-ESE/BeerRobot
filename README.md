@@ -1,77 +1,96 @@
-# BeerRobot
-## Membres du groupe et rôles
-- Chelsea COMLAN : responsable Hardware
-- Loïcia KOEHL : responsable intégration
-- Quentin SIMON : responsable Software
-- Alix HAVRET : responsable livrables
+# <div align="center">BeerRobot</div> 
+__Last update of README__ : 11/01/2023
 
-Encadrant du projet : Mr Fiack , Mr Tauvel
 
-__Last update of README__ : 07/12/2022
+![alt text](Additional_documents/robot_schema.JPG)
 
-__Github du projet ESE de Dernière année à l'ENSEA__
 
 ## Introduction
 Elèves en option ESE (Electronique et Systèmes Embarqués) au sein de l'ENSEA (Ecole Nationale Supérieures de l'Electronique et de ses Applications), réalisant un robot comme projet central de leur option.  
 
 ## Objectifs du projet
-Création d'un robot permettant d'attraper des canettes et les déplacer dans des zones, délimitées au préalables, selon la couleur de la canette.  
+Le but du projet est de créer un robot permettant d'attraper des canettes, de relever la couleur de cette dernière, se déplacer avec la canette attrapée et la déposer dans la zone adaptée selon sa couleur. Par ailleurs le robot devra se repérer sur une table afin de ne pas tomber.   
 
-Le robot devra être capable de :  
-- se déplacer
-- saisir une canette 
-- se déplacer avec la canette
-- détecter la couleur de la canette 
-- ne pas tomber 
-- déplacer la canette dans la zone correspondante
+## Membres du groupe et rôles
+Le groupe de projet est constitué de 4 membres, chacun ayant divers responsabilités.  
+- __Chelsea COMLAN__ : responsable Hardware
+- __Loïcia KOEHL__ : responsable intégration
+- __Quentin SIMON__ : responsable Software
+- __Alix HAVRET__ : responsable livrables
 
+Encadrants du projet : Mr Fiack , Mr Tauvel
 
 ### Contenus des dossiers
   #### Additional documents
 * Schema_architectural_robot
 * Première version du diagramme d'état
+* Rapport de mi-projet (avec diagramme de Gantt, Cahier des charges, ...)
+* Images 
 
   #### Hardware
 * Projet_robot_ESE : dossier kicad avec schematic, PCB et routage
 * PCB 
+
   #### Software 
 * Projet CubeIDE pour la STM32G0
 
-__Non contenu dans les dossiers :__  
-Modification du design initial du robot sur onshape. Ajout d'un roulement en plus à l'avant, modification de l'emplacement de la pince et la forme de celle ci. Une fois le PCB reçu, des modifications seront effectuées afin de permettre un bon placement de l'ensemble des fils.  
-Espaces aménagés dans le design pour les différents capteurs : couleurs, bordure et distance.  Ainsi que pour les fils
-  
-  
-__Etapes en cours de réalisations :__
-- prise en main des capteurs ainsi que des composants (couleurs, bordures, distance) et début de codage sur CubeIDE
-Capteurs opérationnels seuls (fonctionnement solo, sur carte STM32F746NG Discovery)
-    - Capteur TOF 
-    - Capteur de bordure 
-Autres élèments 
-    - Servomoteur opérationnel, ouverture et fermeture avec notre pince imprimée en 3D
-    - moteurs opérationnels, vitesse inégale entre les 2, un asservissement en vitesse sera necessaire pour faire tourner les 2 moteurs à la même vitesse
-    
+  #### 3D 
+* Fichier 3D pour la réalisation du robot
 
-- diagramme à état
-- réalisation en 3D du robot pour premier test : montage finalisé, seule le sujet de placement des fils est à revoir ou à modifier/améliorer.
+## Architecture générale du projet
+
+Au debut du projet nous avons eu la liste de l'ensemble des composants auxquels nous avions accès pour la réalisation du robot et afin de remplir ses divers fonctionnalités.   
+Le schéma architectural au début du projet nous a permit de définir l'ensemble des entrées necessaires dans notre microcontroleur et les divers flux de données qui allaient entrer en jeu.  
+
+### Rôles et utilité des divers composants, capteurs 
+#### Moteurs FIT501
+Deux Moteurs à courant continu, alimenté en xx V, permettant de faire tourner 2 roues. Le moteur a également un encodeur.  
+
+### Servomoteur XL320
+Servomoteur qui permettra de faire bouger la pince necessaire pour saisir les canettes.
+
+### Capteur couleur TCS3200
+
+### Capteur de bordure 
+
+### Capteur TOF 
+
+## 3D du robot 
+Nous avons prit la décision de modifier le design initial du robot sur onshape.  
+Ajout d'un roulement en plus à l'avant, modification de l'emplacement de la pince et la forme de celle ci. Une fois le PCB reçu, des modifications seront effectuées afin de permettre un bon placement de l'ensemble des fils.  
+Par ailleurs nous avons aménagés divers emplacements pour les différents capteurs : couleurs, bordure et distance, ainsi que pour les fils.  
+  
+ 
+## Hardware 
 
 __09/11/2022__ Reception du PCB, début des soudures 
 Soudeurs : Loïcia et Chelsea
 25/11/2022 : ensemble des composants soudés sur la carte, sauf certains connecteurs, test en cours de réalisation
 
-Moteurs : 
-Moteurs opérationnels sur la carte, avec les drivers. Problème de vitesse. Les 2 moteurs ne tournent pas à la même vitesse, il faudrait faire l'asservissement de ces derniers.Actuellement le robot dévie à son démarrage. Par ailleurs, on fera fonctionner l'odométrie pour avoir la position du robot en direct.
 
 
-__Software : __
+
+## Software
+
 Le code sera utilisé dans diverses tâches (utilisation de FreeRTOS). Chaque état décrit dans le diagramme à états correspondra à une tâche.  
 Une tâche pourra faire appel à de la donnée, ou en consommer. Dans chaque tâche nous feront appel à divers bouts de code permettant de démarrer un capteur, un moteur, un servo, etc ...
 
-Le shell utilisé aura pour base le shell de Mr Fiack. Et sera amélioré afin de correspondre à nos attentes.
+Les premiers tests sont effectués via un shell, puis une tache sera implémentée afin de faire fonctionner notre robot de manière autonome (avec une séquence lancée automatiquement).
 
-Les capteurs opérationnels sont :
-- le capteur bordure 
-- le capteur TOF 
+
+### Moteurs : 
+Problème de vitesse. Asservissement necessaire.
+Asservissement : ...
+
+
+
+### Capteurs 
+#### Capteur bordure 
+#### Capteur TOF 
+#### Capteur couleurs
+
+
+
 
 
 Objectif de la présentation finale : 
