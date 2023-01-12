@@ -23,10 +23,10 @@ Le groupe de projet est constitué de 4 membres, chacun ayant divers responsabil
 - __Alix HAVRET__ : responsable livrables
 
 
-![alt text](Additional_documents/gannt_13_12_2022.pdf)
+![alt text](Additional_documents/gantt.JPG)
 
-__Encadrants du projet__ : Mr Fiack , Mr Tauvel
-__ Intervenants extérieur__ : Mme Quittel, Mr Jauffrey, Mr Le Bidan
+__Encadrants du projet__ : Mr Fiack , Mr Tauvel  
+__Intervenants extérieur__ : Mme Quittel, Mr Jauffrey, Mr Le Bidan  
 
 ### Contenus des dossiers
   #### Additional documents
