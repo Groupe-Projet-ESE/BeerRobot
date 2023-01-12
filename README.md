@@ -1,5 +1,5 @@
 # <div align="center">BeerRobot</div> 
-__Last update of README__ : 11/01/2023
+__Last update of README__ : 12/01/2023
 
 
 ![alt text](Additional_documents/robot_schema.JPG)
@@ -47,7 +47,7 @@ Le projet CubeIDE a destination de la STM32G0 (notre microcontroleur de projet) 
 
 Au debut du projet nous avons eu la liste de l'ensemble des composants auxquels nous avions accès pour la réalisation du robot et afin de remplir ses divers fonctionnalités.   
 Le schéma architectural au début du projet nous a permit de définir l'ensemble des entrées necessaires dans notre microcontroleur et les divers flux de données qui allaient entrer en jeu.  
-![alt text](Additional_documents/Schema_architectural_robot.pdf)
+![alt text](Additional_documents/schema_architectural.png)
 
 ### Rôles et utilité des divers composants, capteurs 
 #### Moteurs FIT501
@@ -75,7 +75,7 @@ Par ailleurs nous avons aménagés divers emplacements pour les différents capt
  
 ## Hardware 
 ### Schema electrique
-A partir du schema architectural réalisé au début du projet, nous avons comment le schéma électrique du projet sur Kicad.  
+A partir du schema architectural réalisé au début du projet, nous avons commencé le schéma électrique du projet sur Kicad.  
 Ce dernier a été séparé en plusieurs feuilles afin de pouvoir organiser les différentes partie : STM32, alimentation, capteurs, moteurs, servomoteur.
 
 ![alt text](Additional_documents/schematic_kicad.JPG)
@@ -92,7 +92,8 @@ Nous avons soudés les connecteurs au fur et à mesure de la réalisation des te
 ## Software
 
 Le code sera utilisé dans diverses tâches (utilisation de FreeRTOS). Chaque état décrit dans le diagramme à états correspondra à une tâche.  
-Une tâche pourra faire appel à de la donnée, ou en consommer. Dans chaque tâche nous feront appel à divers bouts de code permettant de démarrer un capteur, un moteur, un servo, etc ...
+Une tâche pourra faire appel à de la donnée, ou en consommer. Dans chaque tâche nous feront appel à divers bouts de code permettant de démarrer un capteur, un moteur, un servo, etc ...  
+
 
 ### Premiers Tests
 Pour effectuer nos tests sur les capteurs, nous avons implémentés un shell. Chacun des capteurs ont été validé sur la STM32F746NG, et ensuite leur code était intégré à la STM32G0.
@@ -105,8 +106,9 @@ Asservissement : ...
 
 
 
-### Capteurs 
+### Fonctionnement des capteurs 
 #### Capteur bordure 
+
 #### Capteur TOF 
 #### Capteur couleurs
 
@@ -114,7 +116,7 @@ Asservissement : ...
 
 
 
-Objectif de la présentation finale : 
+__Objectif de la présentation finale :__
 Présenter son robot avec un code intégré et prévoir une echainement d'action :  
 - repérer la canette
 - avancer vers elle 
