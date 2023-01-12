@@ -18,24 +18,23 @@ Le groupe de projet est constitué de 4 membres, chacun ayant divers responsabil
 - __Quentin SIMON__ : responsable Software
 - __Alix HAVRET__ : responsable livrables
 
-Encadrants du projet : Mr Fiack , Mr Tauvel
+__Encadrants du projet__ : Mr Fiack , Mr Tauvel
+__ Intervenants extérieur__ : Mme Quittel, Mr Jauffrey, Mr Le Bidan
 
 ### Contenus des dossiers
   #### Additional documents
-* Schema_architectural_robot
-* Première version du diagramme d'état
-* Rapport de mi-projet (avec diagramme de Gantt, Cahier des charges, ...)
-* Images 
+Contient l'ensemble des images necessaire à la rédaction de ce README, le rapport de mi-projet rédigé en novembre ainsi que le diaporama de notre présentation du robot en décembre.   
 
   #### Hardware
-* Projet_robot_ESE : dossier kicad avec schematic, PCB et routage
-* PCB 
+Contient le projet Kicad avec l'ensemble des fichiers electronique ainsi que le fichier de routage du PCB.  
+Le PCB a été produit à l'extérieur de l'ENSEA.  
 
   #### Software 
-* Projet CubeIDE pour la STM32G0
+Contient les codes "annexes", c'est à dire les codes des composants testé sur le STM32F746NG.  
+Le projet CubeIDE a destination de la STM32G0 (notre microcontroleur de projet) se trouve sur la master. 
 
   #### 3D 
-* Fichier 3D pour la réalisation du robot
+  Contient certains fichiers 3D pour la réalisation du robot
 
 ## Architecture générale du projet
 
