@@ -50,10 +50,14 @@ Deux Moteurs à courant continu, alimenté en xx V, permettant de faire tourner 
 Servomoteur qui permettra de faire bouger la pince necessaire pour saisir les canettes.
 
 ### Capteur couleur TCS3200
+Capteur permettant de detecter la couleur de la canette à l'aide de filtres superposés à des LEDS.
 
 ### Capteur de bordure 
+Capteur infra-rouge qui détecte si il y a un object en face de lui.
 
 ### Capteur TOF 
+Time Of Flight, renvoie le temps qu'a prit la source lumineuse du capteur pour rebondir sur un object et revenir. Cela nous permet d'avoir notre distance par rapport à un objet. (en mm)
+
 
 ## 3D du robot 
 Nous avons prit la décision de modifier le design initial du robot sur onshape.  
@@ -61,13 +65,16 @@ Ajout d'un roulement en plus à l'avant, modification de l'emplacement de la pin
 Par ailleurs nous avons aménagés divers emplacements pour les différents capteurs : couleurs, bordure et distance, ainsi que pour les fils.  
   
  
+ 
 ## Hardware 
-
-__09/11/2022__ Reception du PCB, début des soudures 
-Soudeurs : Loïcia et Chelsea
-25/11/2022 : ensemble des composants soudés sur la carte, sauf certains connecteurs, test en cours de réalisation
-
-
+### Schema electrique
+A partir du schema architectural réalisé au début du projet, nous avons comment le schéma électrique du projet sur Kicad.  
+Ce dernier a été séparé en plusieurs feuilles afin de pouvoir organiser les différentes partie : STM32, alimentation, capteurs, moteurs, servomoteur.
+### PCB
+__09/11/2022__ Reception du PCB
+__Soudeurs__ : Loïcia et Chelsea
+L'ensemble des soudures ont été réalisées à la main, lee 25/11/2022  l'ensemble des composants étaient soudés sur la carte.   
+Nous avons soudés les connecteurs au fur et à mesure de la réalisation des tests.
 
 
 ## Software
@@ -75,7 +82,9 @@ Soudeurs : Loïcia et Chelsea
 Le code sera utilisé dans diverses tâches (utilisation de FreeRTOS). Chaque état décrit dans le diagramme à états correspondra à une tâche.  
 Une tâche pourra faire appel à de la donnée, ou en consommer. Dans chaque tâche nous feront appel à divers bouts de code permettant de démarrer un capteur, un moteur, un servo, etc ...
 
-Les premiers tests sont effectués via un shell, puis une tache sera implémentée afin de faire fonctionner notre robot de manière autonome (avec une séquence lancée automatiquement).
+### Premiers Tests
+Pour effectuer nos tests sur les capteurs, nous avons implémentés un shell. Chacun des capteurs ont été validé sur la STM32F746NG, et ensuite leur code était intégré à la STM32G0.
+La shell nous a permit de faire une première démonstration. Par la suite implémentation d'une tache avec les commandes necessaires.
 
 
 ### Moteurs : 
