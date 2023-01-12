@@ -11,12 +11,19 @@ Elèves en option ESE (Electronique et Systèmes Embarqués) au sein de l'ENSEA 
 ## Objectifs du projet
 Le but du projet est de créer un robot permettant d'attraper des canettes, de relever la couleur de cette dernière, se déplacer avec la canette attrapée et la déposer dans la zone adaptée selon sa couleur. Par ailleurs le robot devra se repérer sur une table afin de ne pas tomber.   
 
+
+![alt text](Additional_documents/fonctionnalites_robot_schema.png)
+
+
 ## Membres du groupe et rôles
 Le groupe de projet est constitué de 4 membres, chacun ayant divers responsabilités.  
 - __Chelsea COMLAN__ : responsable Hardware
 - __Loïcia KOEHL__ : responsable intégration
 - __Quentin SIMON__ : responsable Software
 - __Alix HAVRET__ : responsable livrables
+
+
+![alt text](Additional_documents/gannt_13_12_2022.pdf)
 
 __Encadrants du projet__ : Mr Fiack , Mr Tauvel
 __ Intervenants extérieur__ : Mme Quittel, Mr Jauffrey, Mr Le Bidan
@@ -40,6 +47,7 @@ Le projet CubeIDE a destination de la STM32G0 (notre microcontroleur de projet) 
 
 Au debut du projet nous avons eu la liste de l'ensemble des composants auxquels nous avions accès pour la réalisation du robot et afin de remplir ses divers fonctionnalités.   
 Le schéma architectural au début du projet nous a permit de définir l'ensemble des entrées necessaires dans notre microcontroleur et les divers flux de données qui allaient entrer en jeu.  
+![alt text](Additional_documents/Schema_architectural_robot.pdf)
 
 ### Rôles et utilité des divers composants, capteurs 
 #### Moteurs FIT501
@@ -69,11 +77,16 @@ Par ailleurs nous avons aménagés divers emplacements pour les différents capt
 ### Schema electrique
 A partir du schema architectural réalisé au début du projet, nous avons comment le schéma électrique du projet sur Kicad.  
 Ce dernier a été séparé en plusieurs feuilles afin de pouvoir organiser les différentes partie : STM32, alimentation, capteurs, moteurs, servomoteur.
+
+![alt text](Additional_documents/schematic_kicad.JPG)
+
 ### PCB
 __09/11/2022__ Reception du PCB
 __Soudeurs__ : Loïcia et Chelsea
 L'ensemble des soudures ont été réalisées à la main, lee 25/11/2022  l'ensemble des composants étaient soudés sur la carte.   
 Nous avons soudés les connecteurs au fur et à mesure de la réalisation des tests.
+
+![alt text](Additional_documents/PCB_routage.JPG)
 
 
 ## Software
