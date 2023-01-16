@@ -1,0 +1,6 @@
+../Core/Src/XL320.c:8:10:update_crc	544	static
+../Core/Src/XL320.c:53:6:servo	64	static
+../Core/Src/XL320.c:137:6:clignote	64	static
+../Core/Src/XL320.c:158:6:close	56	static
+../Core/Src/XL320.c:183:6:open	56	static
+../Core/Src/XL320.c:208:6:speed	64	static

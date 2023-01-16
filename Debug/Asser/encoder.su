@@ -1,0 +1,3 @@
+../Asser/encoder.c:20:5:encoder_shell	24	static
+../Asser/encoder.c:34:6:taskEncoder	32	static
+../Asser/encoder.c:80:6:taskEncoderPrint	40	static

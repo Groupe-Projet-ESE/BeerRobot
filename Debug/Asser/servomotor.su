@@ -1,0 +1,2 @@
+../Asser/servomotor.c:22:5:servo_shell	40	static
+../Asser/servomotor.c:49:6:taskServoMotor	16	static
