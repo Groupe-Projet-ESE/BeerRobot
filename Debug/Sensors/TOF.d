@@ -64,7 +64,10 @@ Sensors/TOF.o: ../Sensors/TOF.c ../Sensors/TOF.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- C:/CubeIDEv101/ESE_Projet/Asser/motor.h
+ C:/CubeIDEv101/ESE_Projet/Asser/motor.h \
+ C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h \
+ C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h ../Core/Inc/XL320.h \
+ ../Core/Inc/usart.h
 ../Sensors/TOF.h:
 C:/CubeIDEv101/ESE_Projet/shell/shell.h:
 ../Core/Inc/main.h:
@@ -136,3 +139,7 @@ C:/CubeIDEv101/ESE_Projet/Drivers/VL53L0X/platform/inc/vl53l0x_platform_log.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 C:/CubeIDEv101/ESE_Projet/Asser/motor.h:
+C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h:
+C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h:
+../Core/Inc/XL320.h:
+../Core/Inc/usart.h:

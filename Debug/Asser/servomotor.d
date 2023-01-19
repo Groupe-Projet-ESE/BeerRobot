@@ -55,7 +55,7 @@ Asser/servomotor.o: ../Asser/servomotor.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- ../Core/Inc/XL320.h ../Core/Inc/usart.h
+ ../Core/Inc/XL320.h ../Core/Inc/usart.h ../Asser/motor.h
 C:/CubeIDEv101/ESE_Projet/shell/shell.h:
 ../Asser/servomotor.h:
 ../Core/Inc/main.h:
@@ -117,3 +117,4 @@ C:/CubeIDEv101/ESE_Projet/shell/shell.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 ../Core/Inc/XL320.h:
 ../Core/Inc/usart.h:
+../Asser/motor.h:

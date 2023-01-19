@@ -15,9 +15,18 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include "motor.h"
 
 TaskHandle_t h_servomotor = NULL;
+extern TaskHandle_t h_motor;
 h_servomotor_t h_cmd_servomotor;
+extern h_motor_t h_cmd_motor;
+extern TaskHandle_t h_tof;
+
+
+extern TaskHandle_t h_recherche;
+
+
 
 int servo_shell(h_shell_t * pshell, int argc, char ** argv){
 	if(argc == 3){
@@ -48,18 +57,21 @@ int servo_shell(h_shell_t * pshell, int argc, char ** argv){
 
 void taskServoMotor(void *pServoMotor){
 	printf("Tâche servomoteur créée\r\n");
-	vTaskSuspend(0);
+	//speed(200);
 	for(;;){
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+		speed(200);
 		if(((h_servomotor_t *)pServoMotor)->cmd=='o'){
-			speed(((h_servomotor_t *)pServoMotor)->speed);
-			vTaskDelay(10);
+			//speed(((h_servomotor_t *)pServoMotor)->speed);
+			//vTaskDelay(10);
 			open();
 		}
 		if(((h_servomotor_t *)pServoMotor)->cmd=='c'){
-			speed(((h_servomotor_t *)pServoMotor)->speed);
-			vTaskDelay(10);
+			//speed(((h_servomotor_t *)pServoMotor)->speed);
+			//vTaskDelay(10);
+			//vTaskSuspend(h_recherche);
+			//vTaskSuspend(h_tof);
 			close();
 		}
-		vTaskSuspend(0);
 	}
 }

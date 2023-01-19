@@ -24,6 +24,11 @@ int stop(void);
 int gauche(int);
 int droite(int);
 
+void taskBordure(void *pMotor);
 void taskMotor(void *pMotor);
+void taskRecherche(void *pMotor);
+void taskTrouve(void *pMotor);
+
+void taskAttrape(void *pMotor);
 
 #endif /* ASSER_MOTOR_H_ */

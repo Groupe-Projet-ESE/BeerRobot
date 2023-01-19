@@ -15,7 +15,19 @@
 
 TaskHandle_t h_motor = NULL;
 h_motor_t h_cmd_motor;
-extern TaskHandle_t h_notif;
+
+TaskHandle_t h_bordure = NULL;
+TaskHandle_t h_recherche = NULL;
+TaskHandle_t h_attrape = NULL;
+TaskHandle_t h_trouve = NULL;
+
+
+extern TaskHandle_t h_tof;
+
+extern TaskHandle_t h_servomotor;
+
+extern h_motor_t h_cmd_servomotor;
+
 
 int moteurDroit(h_shell_t * pshell, int argc, char ** argv){
 	if (argc == 2){
@@ -182,7 +194,7 @@ int motor_demo(h_demo_t * pdemo){
 	}
 	return 0;
 }
-*/
+ */
 
 int avance(int vitesse){
 
@@ -195,8 +207,7 @@ int avance(int vitesse){
 	HAL_TIM_PWM_Start(&htim16, TIM_CHANNEL_1);
 	HAL_TIMEx_PWMN_Start(&htim17, TIM_CHANNEL_1);
 	//vTaskSuspend(h_motor);
-	xTaskNotifyGive(h_motor);
-
+	//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	return 0;
 }
 
@@ -210,7 +221,8 @@ int recule(int vitesse){
 
 	HAL_TIMEx_PWMN_Start(&htim16, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
-	vTaskSuspend(h_motor);
+	//vTaskSuspend(h_motor);
+	//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	return 0;
 }
 
@@ -221,7 +233,8 @@ int stop(void){
 
 	HAL_TIMEx_PWMN_Stop(&htim16, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
-	vTaskSuspend(h_motor);
+	//vTaskSuspend(h_motor);
+	//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	return 0;
 }
 
@@ -236,7 +249,8 @@ int gauche(int vitesse){
 	//Le moteur gauche recule (voir si on doit plutôt l'arrêter)
 	HAL_TIMEx_PWMN_Stop(&htim17, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim17, TIM_CHANNEL_1);
-	vTaskSuspend(h_motor);
+	//vTaskSuspend(h_motor);
+	//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	return 0;
 }
 
@@ -252,17 +266,114 @@ int droite(int vitesse){
 	//Le moteur gauche avance
 	HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
 	HAL_TIMEx_PWMN_Start(&htim17, TIM_CHANNEL_1);
-	vTaskSuspend(h_motor);
+
+	//Appel taskMotor
+	//vTaskSuspend(h_motor);
+	//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	return 0;
 }
 
+void taskBordure(void *pMotor){
+	printf("Tâche bordure créée\r\n");
+	for(;;){
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+		//vTaskSuspend(h_tof);
+		vTaskSuspend(h_recherche);
+		vTaskSuspend(h_trouve);
+		//vTaskSuspend(h_attrape);
+		printf("Je suis sur une bordure");
+		//((h_motor_t *)pMotor)->cmd = 'r';
+		//((h_motor_t *)pMotor)->speed = 300;
+		//xTaskNotifyGive(h_motor);
+		vTaskDelay(3);
+		h_cmd_motor.cmd='r';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(400);
+		h_cmd_motor.cmd='d';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(300);
+		h_cmd_motor.cmd='a';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		//vTaskResume(h_tof);
+		vTaskResume(h_recherche);
+		vTaskResume(h_trouve);
+		//vTaskResume(h_attrape);
+	}
+
+}
+
+
+//La tache recherche fonctionne mal
+void taskRecherche(void *pMotor){
+	printf("Tâche recherche créée\r\n");
+	for(;;){
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+		vTaskSuspend(h_trouve);
+		vTaskDelay(3);
+		h_cmd_motor.cmd='a';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(400);
+		h_cmd_motor.cmd='d';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		h_cmd_motor.cmd='a';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		h_cmd_motor.cmd='g';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		h_cmd_motor.cmd='s';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		vTaskResume(h_trouve);
+	}
+}
+
+
+void taskTrouve(void *pMotor){
+	printf("Tâche trouve créée\r\n");
+	for(;;){
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+		vTaskSuspend(h_recherche);
+		h_cmd_motor.cmd='s';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		h_cmd_motor.cmd='a';
+		h_cmd_motor.speed=300;
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		vTaskResume(h_recherche);
+	}
+}
+
+void taskAttrape(void *pMotor){
+	printf("Tâche attrape créée\r\n");
+	for(;;){
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+		vTaskSuspend(h_recherche);
+		h_cmd_servomotor.cmd='c';
+		h_cmd_servomotor.speed=200;
+		xTaskNotifyGive(h_servomotor);
+		vTaskDelay(200);
+		h_cmd_motor.cmd='s';
+		xTaskNotifyGive(h_motor);
+		vTaskDelay(200);
+		//vTaskResume(h_recherche);
+	}
+}
+
+
+
+
+
 void taskMotor(void *pMotor){
 	printf("Tâche moteur créée\r\n");
-	ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
+	//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 	printf("Notif taken");
 	//vTaskSuspend(0);
 	for(;;){
-
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 		if(((h_motor_t *)pMotor)->cmd=='a'){
 			avance(((h_motor_t *)pMotor)->speed);
 		}
@@ -278,6 +389,7 @@ void taskMotor(void *pMotor){
 		if(((h_motor_t *)pMotor)->cmd=='d'){
 			droite(((h_motor_t *)pMotor)->speed);
 		}
+
 
 	}
 	/*

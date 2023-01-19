@@ -19,11 +19,18 @@
 #include "cmsis_os.h"
 #include "stdio.h"
 #include "motor.h"
+#include "servomotor.h"
 
 extern TaskHandle_t h_motor;
-extern h_motor_t h_cmd_motor;
 extern TaskHandle_t h_notif;
+extern TaskHandle_t h_servomotor;
+extern TaskHandle_t h_recherche;
 
+extern TaskHandle_t h_trouve;
+extern TaskHandle_t h_attrape;
+
+extern h_motor_t h_cmd_motor;
+extern h_servomotor_t h_cmd_servomotor;
 
 
 uint32_t refSpadCount;
@@ -56,6 +63,8 @@ VL53L0X_DEV Dev = &vl53l0x_c;//Dev prend comme valeur l'adresse du pointeur (rac
 
 TaskHandle_t h_tof;
 
+
+int last_distance;
 
 void clignotage_led_stm32(){
 	HAL_GPIO_WritePin(GPIOC, LED_GREEN_Pin, GPIO_PIN_RESET); // Disable XSHUT
@@ -149,6 +158,31 @@ void mesure_et_affichage(){
 		Message_resultat_Size = sprintf((char*)Message_resultat, "Distance en millimetre: %i\n\r", distance);
 		HAL_UART_Transmit(&huart1, Message_resultat, Message_resultat_Size, 100);
 
+		//on a rajoute 500 pour capter la canette de plus loin
+		if(distance<500){
+			HAL_GPIO_WritePin(GPIOC, LED_RED_Pin, GPIO_PIN_SET);
+			if(distance<125){
+				HAL_GPIO_WritePin(GPIOC, LED_GREEN_Pin, GPIO_PIN_SET);
+				xTaskNotifyGive(h_attrape);
+			}
+			else{
+				xTaskNotifyGive(h_trouve);
+			}
+			//HAL_GPIO_WritePin(GPIOC, LED_RED_Pin, GPIO_PIN_SET);
+			//vTaskSuspend(h_recherche);
+			/*
+			h_cmd_motor.cmd='s';
+			h_cmd_motor.speed=300;
+			xTaskNotifyGive(h_motor);
+			vTaskDelay(200);
+			h_cmd_motor.cmd='a';
+			h_cmd_motor.speed=300;
+			xTaskNotifyGive(h_motor);
+			vTaskDelay(200);*/
+
+			//Ca doit marcher si on enlève la boucle autour
+		}
+#if 0
 		if(distance<200){
 			HAL_GPIO_WritePin(GPIOC, LED_GREEN_Pin, GPIO_PIN_SET); // Enable XSHUT
 			//HAL_UART_Transmit(&huart1, Message_resultat, Message_resultat_Size, 100);
@@ -158,19 +192,49 @@ void mesure_et_affichage(){
 			//TOF_Enable(1, GPIO_PIN_RESET);
 			//TOF_Enable(2, GPIO_PIN_SET);
 			h_cmd_motor.cmd='s';
+			h_cmd_motor.speed=300;
 			xTaskNotifyGive(h_motor);
-
-
+			vTaskDelay(700);
+			//mettre le code de recherche
+			//h_cmd_motor.cmd='a';
+			//h_cmd_motor.speed=300;
+			//xTaskNotifyGive(h_motor);
+			if(distance<125){
+				//Code la tache pour attraper la canette				}
+				h_cmd_servomotor.cmd='c';
+				h_cmd_servomotor.speed=300;
+				h_cmd_motor.cmd='s';
+				xTaskNotifyGive(h_motor);
+				xTaskNotifyGive(h_servomotor);
+				vTaskDelay(200);
+			}
+			else{
+				h_cmd_motor.cmd='a';
+				h_cmd_motor.speed=300;
+				xTaskNotifyGive(h_motor);
+				vTaskDelay(200);
+			}
 		}
-
+#endif
+		//LED OFF > 200
 		else{
+
 			HAL_GPIO_WritePin(GPIOC, LED_GREEN_Pin, GPIO_PIN_RESET);
 			HAL_UART_Transmit(&huart1, Message_resultat, Message_resultat_Size, 100);
 
+			//On enlève cette partie pour faire fonctionner le robot avec les bordures assez rapides
+			//xTaskNotifyGive(h_recherche);
+			//vTaskDelay(200);
+			xTaskNotifyGive(h_recherche);
+
 		}
-		//HAL_UART_Transmit(&huart1, Message_resultat, Message_resultat_Size, 100);
+
+
 	}
+
+	//HAL_UART_Transmit(&huart1, Message_resultat, Message_resultat_Size, 100);
 }
+
 
 int TOF_shell(h_shell_t * pshell, int argc, char ** argv){
 	if (argc == 1){
@@ -189,17 +253,19 @@ int TOF_shell(h_shell_t * pshell, int argc, char ** argv){
 //task TOF
 void taskTOF(void *pTOF){
 	printf("Tâche TOF créée\r\n");
-	vTaskSuspend(0);
+
 	//Init TOF
 	initialisation_mesure_capteur();
 
 	int index = 0;
 	for(;;){
+		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 		index++;
 		mesure_et_affichage();
+		vTaskDelay(200);
 		if(index==TAB_SIZE2){
 			index=0;
-			vTaskSuspend(0);
+			//ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 		}
 	}
 }

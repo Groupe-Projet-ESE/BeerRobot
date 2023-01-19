@@ -56,7 +56,10 @@ shell/demo.o: ../shell/demo.c \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h \
  ../Core/Inc/gpio.h ../shell/demo.h ../Core/Inc/main.h \
  C:/CubeIDEv101/ESE_Projet/Asser/motor.h \
- C:/CubeIDEv101/ESE_Projet/shell/shell.h
+ C:/CubeIDEv101/ESE_Projet/shell/shell.h \
+ C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h \
+ C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h ../Core/Inc/tim.h \
+ ../Core/Inc/XL320.h ../Core/Inc/usart.h
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
@@ -118,3 +121,8 @@ shell/demo.o: ../shell/demo.c \
 ../Core/Inc/main.h:
 C:/CubeIDEv101/ESE_Projet/Asser/motor.h:
 C:/CubeIDEv101/ESE_Projet/shell/shell.h:
+C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h:
+C:/CubeIDEv101/ESE_Projet/Asser/servomotor.h:
+../Core/Inc/tim.h:
+../Core/Inc/XL320.h:
+../Core/Inc/usart.h:
