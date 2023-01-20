@@ -1,7 +1,7 @@
 # <div align="center">BeerRobot</div> 
 __Last update of README__ : 20/01/2023
 
-![alt text](Additional_documents/robot_reel.jpg)
+![alt text](Additional_documents/robot_reel_petite.jpg)
 
 
 
@@ -74,6 +74,8 @@ Ajout d'un roulement en plus à l'avant, modification de l'emplacement de la pin
 Par ailleurs nous avons aménagés divers emplacements pour les différents capteurs : couleurs, bordure et distance, ainsi que pour les fils. 
 
   
+  
+![alt text](Additional_documents/3D_robot.JPG)
  
  
 ## Hardware 
