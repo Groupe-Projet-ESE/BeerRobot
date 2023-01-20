@@ -1,8 +1,8 @@
 # <div align="center">BeerRobot</div> 
 __Last update of README__ : 20/01/2023
 
+![alt text](Additional_documents/robot_reel.jpg)
 
-![alt text](Additional_documents/robot_schema.JPG)
 
 
 ## Introduction
@@ -71,7 +71,8 @@ Time Of Flight, renvoie le temps qu'a prit la source lumineuse du capteur pour r
 ## 3D du robot 
 Nous avons prit la décision de modifier le design initial du robot sur onshape.  
 Ajout d'un roulement en plus à l'avant, modification de l'emplacement de la pince et la forme de celle ci. Une fois le PCB reçu, des modifications seront effectuées afin de permettre un bon placement de l'ensemble des fils.  
-Par ailleurs nous avons aménagés divers emplacements pour les différents capteurs : couleurs, bordure et distance, ainsi que pour les fils.  
+Par ailleurs nous avons aménagés divers emplacements pour les différents capteurs : couleurs, bordure et distance, ainsi que pour les fils. 
+
   
  
  
