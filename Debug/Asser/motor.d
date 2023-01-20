@@ -54,7 +54,8 @@ Asser/motor.o: ../Asser/motor.c ../Asser/motor.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ ../Asser/encoder.h
 ../Asser/motor.h:
 C:/CubeIDEv101/ESE_Projet/shell/shell.h:
 ../Core/Inc/main.h:
@@ -114,3 +115,4 @@ C:/CubeIDEv101/ESE_Projet/shell/shell.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+../Asser/encoder.h:

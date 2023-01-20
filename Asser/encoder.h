@@ -26,8 +26,24 @@ typedef struct h_encoder_struct{
 
 }h_encoder_t;
 
+typedef struct h_asser_struct{
+
+	uint32_t integration;
+	uint32_t speed_consigne;
+	uint32_t erreur;
+	uint32_t Kp;
+	uint32_t Ki;
+	uint16_t duty;
+
+}h_asser_t;
+
 int encoder_shell(h_shell_t * pshell, int argc, char ** argv);
 void taskEncoder(void *pEncoder);
 void taskEncoderPrint(void *pPrint);
+
+int get_left_tick();
+int get_right_tick();
+void update_gauche(int vitesse );
+void update_droite(int vitesse);
 
 #endif /* ENCODER_H_ */

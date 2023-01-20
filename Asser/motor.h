@@ -24,6 +24,9 @@ int stop(void);
 int gauche(int);
 int droite(int);
 
+int avance_droit(int vitesse);
+int avance_gauche(int vitesse);
+
 void taskBordure(void *pMotor);
 void taskMotor(void *pMotor);
 void taskRecherche(void *pMotor);

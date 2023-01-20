@@ -99,6 +99,10 @@ extern h_motor_t h_cmd_motor;
 extern h_servomotor_t h_cmd_servomotor;
 //static h_shell_t shell_funct1;
 static h_demo_t demo_funct1;
+
+extern h_asser_t asservissement_gauche;
+extern h_asser_t asservissement_droit;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

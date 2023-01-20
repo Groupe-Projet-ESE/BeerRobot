@@ -1,6 +1,6 @@
 ../Sensors/TOF.c:69:6:clignotage_led_stm32	8	static
-../Sensors/TOF.c:84:6:TOF_Enable	32	static
+../Sensors/TOF.c:84:6:TOF_Enable	24	static
 ../Sensors/TOF.c:100:6:initialisation_mesure_capteur	8	static
 ../Sensors/TOF.c:144:6:mesure_et_affichage	16	static
-../Sensors/TOF.c:239:5:TOF_shell	24	static
-../Sensors/TOF.c:254:6:taskTOF	24	static
+../Sensors/TOF.c:284:5:TOF_shell	24	static
+../Sensors/TOF.c:299:6:taskTOF	24	static

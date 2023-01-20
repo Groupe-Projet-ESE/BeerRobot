@@ -1,4 +1,3 @@
-"./Asser/asservissement.o"
 "./Asser/encoder.o"
 "./Asser/motor.o"
 "./Asser/servomotor.o"

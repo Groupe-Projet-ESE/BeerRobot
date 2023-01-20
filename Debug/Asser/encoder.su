@@ -1,3 +1,7 @@
-../Asser/encoder.c:20:5:encoder_shell	24	static
-../Asser/encoder.c:34:6:taskEncoder	32	static
-../Asser/encoder.c:80:6:taskEncoderPrint	40	static
+../Asser/encoder.c:33:5:encoder_shell	24	static
+../Asser/encoder.c:49:5:get_left_tick	8	static
+../Asser/encoder.c:52:5:get_right_tick	8	static
+../Asser/encoder.c:56:6:update_gauche	24	static
+../Asser/encoder.c:70:6:update_droite	24	static
+../Asser/encoder.c:84:6:taskEncoder	32	static
+../Asser/encoder.c:130:6:taskEncoderPrint	40	static

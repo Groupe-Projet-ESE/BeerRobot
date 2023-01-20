@@ -5,19 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Asser/asservissement.c \
 ../Asser/encoder.c \
 ../Asser/motor.c \
 ../Asser/servomotor.c 
 
 OBJS += \
-./Asser/asservissement.o \
 ./Asser/encoder.o \
 ./Asser/motor.o \
 ./Asser/servomotor.o 
 
 C_DEPS += \
-./Asser/asservissement.d \
 ./Asser/encoder.d \
 ./Asser/motor.d \
 ./Asser/servomotor.d 
@@ -30,7 +27,7 @@ Asser/%.o Asser/%.su: ../Asser/%.c Asser/subdir.mk
 clean: clean-Asser
 
 clean-Asser:
-	-$(RM) ./Asser/asservissement.d ./Asser/asservissement.o ./Asser/asservissement.su ./Asser/encoder.d ./Asser/encoder.o ./Asser/encoder.su ./Asser/motor.d ./Asser/motor.o ./Asser/motor.su ./Asser/servomotor.d ./Asser/servomotor.o ./Asser/servomotor.su
+	-$(RM) ./Asser/encoder.d ./Asser/encoder.o ./Asser/encoder.su ./Asser/motor.d ./Asser/motor.o ./Asser/motor.su ./Asser/servomotor.d ./Asser/servomotor.o ./Asser/servomotor.su
 
 .PHONY: clean-Asser
 

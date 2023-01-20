@@ -12,6 +12,11 @@
 #include "stdlib.h"
 #include "string.h"
 #include <stdio.h>
+#include "encoder.h"
+#include <stdlib.h>
+#include <math.h>
+
+
 
 TaskHandle_t h_motor = NULL;
 h_motor_t h_cmd_motor;
@@ -21,13 +26,11 @@ TaskHandle_t h_recherche = NULL;
 TaskHandle_t h_attrape = NULL;
 TaskHandle_t h_trouve = NULL;
 
-
 extern TaskHandle_t h_tof;
-
 extern TaskHandle_t h_servomotor;
-
 extern h_motor_t h_cmd_servomotor;
-
+extern h_asser_t asservissement_gauche;
+extern h_asser_t asservissement_droit;
 
 int moteurDroit(h_shell_t * pshell, int argc, char ** argv){
 	if (argc == 2){
@@ -273,6 +276,33 @@ int droite(int vitesse){
 	return 0;
 }
 
+
+int avance_droit(int vitesse){
+	HAL_TIMEx_PWMN_Stop(&htim16, TIM_CHANNEL_1);
+	//HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
+
+	uint32_t tim_per_droit=__HAL_TIM_GET_AUTORELOAD(&htim16);
+	__HAL_TIM_SET_COMPARE(&htim16,TIM_CHANNEL_1,(uint32_t)((vitesse/100.0)*tim_per_droit));
+
+	HAL_TIM_PWM_Start(&htim16, TIM_CHANNEL_1);
+	//HAL_TIMEx_PWMN_Start(&htim17, TIM_CHANNEL_1);
+	//vTaskSuspend(h_motor);
+	return 0;
+}
+
+int avance_gauche(int vitesse){
+	//HAL_TIMEx_PWMN_Stop(&htim16, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop(&htim17, TIM_CHANNEL_1);
+	uint32_t tim_per_gauche=__HAL_TIM_GET_AUTORELOAD(&htim17);
+
+	__HAL_TIM_SET_COMPARE(&htim17,TIM_CHANNEL_1,(uint32_t)((vitesse/100.0)*tim_per_gauche));
+
+	HAL_TIMEx_PWMN_Start(&htim17, TIM_CHANNEL_1);
+
+	//vTaskSuspend(h_motor);
+	return 0;
+}
+
 void taskBordure(void *pMotor){
 	printf("Tâche bordure créée\r\n");
 	for(;;){
@@ -311,18 +341,20 @@ void taskRecherche(void *pMotor){
 		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 		vTaskSuspend(h_trouve);
 		vTaskDelay(3);
+		int angle_droit = round(rand()/6000000);
+		int angle_gauche = round(rand()/6000000);
 		h_cmd_motor.cmd='a';
 		xTaskNotifyGive(h_motor);
 		vTaskDelay(400);
 		h_cmd_motor.cmd='d';
 		xTaskNotifyGive(h_motor);
-		vTaskDelay(200);
+		vTaskDelay(angle_droit);
 		h_cmd_motor.cmd='a';
 		xTaskNotifyGive(h_motor);
 		vTaskDelay(200);
 		h_cmd_motor.cmd='g';
 		xTaskNotifyGive(h_motor);
-		vTaskDelay(200);
+		vTaskDelay(angle_gauche);
 		h_cmd_motor.cmd='s';
 		xTaskNotifyGive(h_motor);
 		vTaskDelay(200);
@@ -336,11 +368,14 @@ void taskTrouve(void *pMotor){
 	for(;;){
 		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 		vTaskSuspend(h_recherche);
+		h_cmd_servomotor.cmd='o';
+		xTaskNotifyGive(h_servomotor);
+		vTaskDelay(200);
 		h_cmd_motor.cmd='s';
 		xTaskNotifyGive(h_motor);
 		vTaskDelay(200);
 		h_cmd_motor.cmd='a';
-		h_cmd_motor.speed=300;
+		//h_cmd_motor.speed=300;
 		xTaskNotifyGive(h_motor);
 		vTaskDelay(200);
 		vTaskResume(h_recherche);
@@ -376,6 +411,8 @@ void taskMotor(void *pMotor){
 		ulTaskNotifyTake(pdTRUE,portMAX_DELAY);
 		if(((h_motor_t *)pMotor)->cmd=='a'){
 			avance(((h_motor_t *)pMotor)->speed);
+			//update_droite(((h_motor_t *)pMotor)->speed);
+			//update_gauche(((h_motor_t *)pMotor)->speed);
 		}
 		if(((h_motor_t *)pMotor)->cmd=='r'){
 			recule(((h_motor_t *)pMotor)->speed);
