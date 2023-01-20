@@ -1,5 +1,5 @@
 # <div align="center">BeerRobot</div> 
-__Last update of README__ : 12/01/2023
+__Last update of README__ : 20/01/2023
 
 
 ![alt text](Additional_documents/robot_schema.JPG)
@@ -29,7 +29,9 @@ __Encadrants du projet__ : Mr Fiack , Mr Tauvel
 __Intervenants extérieur__ : Mme Quittel, Mr Jauffrey, Mr Le Bidan  
 
 ### Contenus des dossiers
-  #### Additional documents
+La démonstration finale se trouve sur la master. 
+
+#### Additional documents
 Contient l'ensemble des images necessaire à la rédaction de ce README, le rapport de mi-projet rédigé en novembre ainsi que le diaporama de notre présentation du robot en décembre.   
 
   #### Hardware
@@ -101,18 +103,22 @@ La shell nous a permit de faire une première démonstration. Par la suite impl�
 
 
 ### Moteurs : 
-Problème de vitesse. Asservissement necessaire.
-Asservissement : ...
+Après les premiers tests, nous avons remarqué que pour une même commande vitesse, les 2 roues ne tournaient pas à la même vitesse, de ce fait le robot n'allait pas droit.  Afin de régler ce problème il était nécessaire de mettre en place un asservissement. Ce dernier n'a pas abouti. 
+
 
 
 
 ### Fonctionnement des capteurs 
 #### Capteur bordure 
 
+
 #### Capteur TOF 
+Le capteur TOF a un driver déja créé, ce qui nous a permit de réutiliser les fonctions déja existantes permettant l'initialisation du capteur, et la récupération des valeurs .L'activation de la pin GPIO nous permet d'acquérir les valeurs en continue tant que le TOF est actif. Lorsque que l'on veut utiliser 2 TOF, c'est la pin XSHUT qui rentre en jeux. Les 2 TOF étant sur le même I2C, on activera uniquement le TOF du capteur que l'on veut utiliser.  
+
+
 #### Capteur couleurs
 
-
+Non fonctionnel ...
 
 
 
